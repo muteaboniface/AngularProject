@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tax-app';
+  message = 'Great mastery of Angular one step at a time!';
+
 }
