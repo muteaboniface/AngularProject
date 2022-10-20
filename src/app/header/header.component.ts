@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   }
 
   slogan:String = "Your one Stop Shop for all your coffee beans";
-
+  propertyBinding:String = "../../assets/images/shop3.jpg";
   newSlogan(){
     return "Method Slogan Test";
   }
