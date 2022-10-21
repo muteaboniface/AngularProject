@@ -1,0 +1,19 @@
+<div class="search-div" [ngClass] = "{changeBackground: searchValue != ''}">
+    <span><b>Search</b></span>
+    <!-- <input type="text" (input)="changeValue($event)"> -->
+    <input type="text" [(ngModel)] = "searchValue">
+    <span *ngIf="searchValue != ''">You searched for {{ searchValue }} </span>
+</div>
+
+<div class="filter-container">
+    <span><b>Filter: </b></span>
+
+    <input type="radio" name="filter" id="1" value="all">
+    <span>All Cartoons ({{all}}) </span>
+
+    <input type="radio" name="filter" id="2" value="Available">
+    <span>Available ({{available}})</span>
+
+    <input type="radio" name="filter" id="3" value="Not Available">
+    <span>Unavailable ({{unavailable}})</span>
+</div>

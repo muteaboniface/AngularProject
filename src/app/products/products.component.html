@@ -1,0 +1,32 @@
+<!-- <div *ngFor = "let item of [1,2,3,4,5]">
+    <p>Display number: {{item}}</p>
+</div> -->
+<app-search 
+    [all]="getallCartoons()"
+    [available] = "getAvailableCartoons()"
+    [unavailable]="getUnAvailableCartoons()">
+</app-search>
+
+<div *ngFor="let c of cartoons">
+    <div class="product-container" [ngStyle] = "{backgroundColor: c.available === 'Available' ? 'aquamarine' : 'rgb(126, 128, 124)'}">
+        <div class="image-container">
+            <img [src]="c.url" alt="cartoon" style="max-height: 50px; max-width: 50px">
+        </div>
+        <div>
+            <div class="name-container"><h6>{{c.name}}</h6></div>
+            <div class="detailContainer">
+                <div class="details" >{{ c.available }} </div>
+                <div class="details" [ngStyle] = "{color: c.rating === 9 ? 'rgb(13, 70, 34)': 'rgb(202, 152, 91)'}">Rating: {{ c.rating }} </div>
+                <div class="details">Appearance {{ c.Appearance }} </div>
+            </div>
+        </div>
+        <div class="options">
+            <button class="btn btn-success">Show Details</button>
+            <button class="btn btn-warning" *ngIf="c.available === 'Available' else notifyme">Call {{ c.name }} </button>
+        </div>
+
+        <ng-template #notifyme>
+            <button class="btn btn-danger">Notify Me</button>
+        </ng-template>
+    </div>
+</div>
